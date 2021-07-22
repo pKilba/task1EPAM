@@ -1,11 +1,7 @@
-package com.epam.task1.cabCompany.entity.transportItems;
+package com.epam.task1.cabCompany.entity.component.engine;
 
-public class Engine {
+public abstract class Engine {
     private float engineVolume;
-
-    public Engine() {
-    }
-
 
     public Engine(float engineVolume) {
         this.engineVolume = engineVolume;
@@ -19,12 +15,4 @@ public class Engine {
         this.engineVolume = engineVolume;
     }
 
-    class PetrolEngine {
-    }
-
-    class DieselEngines {
-    }
-
-    class ElectricMotors {
-    }
 }

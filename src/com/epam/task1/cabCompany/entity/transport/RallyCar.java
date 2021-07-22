@@ -1,8 +1,7 @@
 package com.epam.task1.cabCompany.entity.transport;
 
-import com.epam.task1.cabCompany.entity.transport.PassengerCar;
-import com.epam.task1.cabCompany.entity.transportItems.Engine;
-import com.epam.task1.cabCompany.entity.transportItems.Wheel;
+import com.epam.task1.cabCompany.entity.component.engine.Engine;
+import com.epam.task1.cabCompany.entity.component.Wheel;
 
 public class RallyCar extends PassengerCar {
 
