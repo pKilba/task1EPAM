@@ -1,4 +1,4 @@
-package com.epam.task1.cabCompany.exception;
+package com.epam.task1.cabCompany.data;
 
 public class DataChecking {
 

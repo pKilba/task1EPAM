@@ -3,23 +3,25 @@ package com.epam.task1.cabCompany.entity.transport;
 import com.epam.task1.cabCompany.entity.component.engine.Engine;
 import com.epam.task1.cabCompany.entity.component.Wheel;
 
+import java.util.List;
+
 public class RallyCar extends PassengerCar {
 
-    private boolean rigidSuspension;
+    private boolean isRigidSuspensionOn;
 
     public RallyCar() {
     }
 
-    public RallyCar(int price, int fuelConsumption, int speed, byte doors, Engine engine, Wheel wheel, boolean rigidSuspension) {
+    public RallyCar(int price, int fuelConsumption, int speed, byte doors, Engine engine, List <Wheel> wheel, boolean isRigidSuspensionOn) {
         super(price, fuelConsumption, speed, doors, engine, wheel);
-        this.rigidSuspension = rigidSuspension;
+        this.isRigidSuspensionOn = isRigidSuspensionOn;
     }
 
-    public void setRigidSuspension(boolean rigidSuspension) {
-        this.rigidSuspension = rigidSuspension;
+    public void setRigidSuspensionOn(boolean rigidSuspensionOn) {
+        this.isRigidSuspensionOn = rigidSuspensionOn;
     }
 
     public boolean getsRigidSuspension() {
-        return this.rigidSuspension;
+        return this.isRigidSuspensionOn;
     }
 }

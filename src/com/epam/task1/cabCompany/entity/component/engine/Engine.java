@@ -1,7 +1,7 @@
 package com.epam.task1.cabCompany.entity.component.engine;
 
 public abstract class Engine {
-    private float engineVolume;
+    private final float engineVolume;
 
     public Engine(float engineVolume) {
         this.engineVolume = engineVolume;
@@ -11,8 +11,5 @@ public abstract class Engine {
         return engineVolume;
     }
 
-    public void setEngineVolume(float engineVolume) {
-        this.engineVolume = engineVolume;
-    }
 
 }

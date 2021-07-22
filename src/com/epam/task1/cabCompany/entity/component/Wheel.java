@@ -1,20 +1,18 @@
 package com.epam.task1.cabCompany.entity.component;
 
 public class Wheel {
-    private byte tread;
+    private final String tread;
 
     public Wheel() {
+        tread = "Default tread";
     }
 
-    public Wheel(byte tread) {
+    public Wheel(String tread) {
         this.tread = tread;
     }
 
-    public byte getTread() {
+    public String getTread() {
         return tread;
     }
 
-    public void setTread(byte tread) {
-        this.tread = tread;
-    }
 }

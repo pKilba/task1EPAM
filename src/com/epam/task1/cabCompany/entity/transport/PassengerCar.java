@@ -1,21 +1,27 @@
 package com.epam.task1.cabCompany.entity.transport;
 
+import com.epam.task1.cabCompany.entity.component.engine.DieselEngine;
 import com.epam.task1.cabCompany.entity.component.engine.Engine;
 import com.epam.task1.cabCompany.entity.component.Wheel;
-import com.epam.task1.cabCompany.exception.DataChecking;
-import com.epam.task1.cabCompany.exception.NegativeNumbers;
+import com.epam.task1.cabCompany.data.DataChecking;
+import com.epam.task1.cabCompany.exception.NegativeValueException;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static java.lang.System.exit;
 
 //легковой автомобиль
-public class PassengerCar extends Car implements Comparable<PassengerCar> {
+public class PassengerCar extends Car {
     private byte doors;
 
+
     public PassengerCar() {
+        super(123, 44, 55, new DieselEngine(), Arrays.asList(new Wheel()));
     }
 
-    public PassengerCar(int price, int fuelConsumption, int speed, byte doors, Engine engine, Wheel wheel) {
-
+    public PassengerCar(int price, int fuelConsumption, int speed, byte doors,
+                        Engine engine, List<Wheel> wheel) {
         super(price, fuelConsumption, speed, engine, wheel);
         this.doors = doors;
     }
@@ -25,20 +31,9 @@ public class PassengerCar extends Car implements Comparable<PassengerCar> {
     }
 
     public void setDoors(byte doors) {
-        try {
-            if (DataChecking.negativeCheck(doors))
-                throw new NegativeNumbers();
-        } catch (NegativeNumbers negativeNumbers) {
-            negativeNumbers.printStackTrace();
-            exit(1);
-        }
         this.doors = doors;
     }
 
-    @Override
-    public int compareTo(PassengerCar car) {
-        int result = this.getFuelConsumption().compareTo(car.getFuelConsumption());
-        return result;
-    }
+
 }
 

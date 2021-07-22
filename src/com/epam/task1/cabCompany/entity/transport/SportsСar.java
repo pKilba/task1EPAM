@@ -3,37 +3,39 @@ package com.epam.task1.cabCompany.entity.transport;
 import com.epam.task1.cabCompany.entity.component.engine.Engine;
 import com.epam.task1.cabCompany.entity.component.Wheel;
 
-public class SportsСar extends PassengerCar implements Acceleration {
-    private boolean acceleration;
-    private boolean sponsors;
+import java.util.List;
+
+public class SportsСar extends PassengerCar {
+    private boolean isAccelerationOn;
+    private boolean isSponsorsExists;
 
     public SportsСar() {
     }
 
-    public SportsСar(int price, int fuelConsumption, int speed, byte doors, Engine engine, Wheel wheel, boolean acceleration, boolean sponsors) {
+    public SportsСar(int price, int fuelConsumption, int speed, byte doors, Engine engine,
+                     List<Wheel> wheel, boolean isAccelerationOn, boolean sponsors) {
         super(price, fuelConsumption, speed, doors, engine, wheel);
-        this.acceleration = acceleration;
-        this.sponsors = sponsors;
+        this.isAccelerationOn = isAccelerationOn;
+        this.isSponsorsExists = sponsors;
     }
 
-    public void setAcceleration(boolean acceleration) {
-        this.acceleration = acceleration;
+    public void setAccelerationOn(boolean accelerationOn) {
+        this.isAccelerationOn = accelerationOn;
     }
 
     public void setSponsors(boolean sponsors) {
-        this.sponsors = sponsors;
+        this.isSponsorsExists = sponsors;
     }
 
-    public boolean getAcceleration() {
-        return this.acceleration;
+    public boolean getAccelerationOn() {
+        return this.isAccelerationOn;
     }
 
     public boolean getSponsors() {
-        return this.sponsors;
+        return this.isSponsorsExists;
     }
 
-    @Override
     public void accelerationOn() {
-        acceleration = true;
+        isAccelerationOn = true;
     }
 }

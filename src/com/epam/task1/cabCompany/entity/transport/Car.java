@@ -2,28 +2,27 @@ package com.epam.task1.cabCompany.entity.transport;
 
 import com.epam.task1.cabCompany.entity.component.engine.Engine;
 import com.epam.task1.cabCompany.entity.component.Wheel;
-import com.epam.task1.cabCompany.exception.DataChecking;
-import com.epam.task1.cabCompany.exception.NegativeNumbers;
 
-import static java.lang.System.exit;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 //базовый класс
-public class Car {
+public abstract class Car implements Comparable<Car> {
     private int price;
-    private Integer fuelConsumption;
+    private int fuelConsumption;
     private int speed;
     private Engine engine;
-    private Wheel wheel;
+    private final List<Wheel> wheels = new ArrayList<>();
 
-    public Car() {
-    }
 
-    public Car(int price, int fuelConsumption, int speed, Engine engine, Wheel wheel) {
+    public Car(int price, int fuelConsumption, int speed, Engine engine, List<Wheel> wheels) {
         this.price = price;
         this.fuelConsumption = fuelConsumption;
         this.speed = speed;
         this.engine = engine;
-        this.wheel = wheel;
+        this.wheels.addAll(wheels);
     }
 
     public Engine getEngine() {
@@ -42,8 +41,8 @@ public class Car {
         return speed;
     }
 
-    public Wheel getWheel() {
-        return wheel;
+    public List<Wheel> getWheels() {
+        return wheels;
     }
 
     public void setEngine(Engine engine) {
@@ -51,41 +50,19 @@ public class Car {
     }
 
     public void setFuelConsumption(Integer fuelConsumption) {
-        try {
-            if (DataChecking.negativeCheck(fuelConsumption))
-                throw new NegativeNumbers();
-        } catch (NegativeNumbers negativeNumbers) {
-            negativeNumbers.printStackTrace();
-            exit(1);
-        }
         this.fuelConsumption = fuelConsumption;
     }
 
     public void setPrice(int price) {
-        try {
-            if (DataChecking.negativeCheck(price))
-                throw new NegativeNumbers();
-        } catch (NegativeNumbers negativeNumbers) {
-            negativeNumbers.printStackTrace();
-            exit(1);
-        }
         this.price = price;
     }
 
     public void setSpeed(int speed) {
-        try {
-            if (DataChecking.negativeCheck(speed))
-                throw new NegativeNumbers();
-        } catch (NegativeNumbers negativeNumbers) {
-            negativeNumbers.printStackTrace();
-            exit(1);
-        }
         this.speed = speed;
     }
 
-    public void setWheel(Wheel wheel) {
-
-        this.wheel = wheel;
+    public void setWheels(List<Wheel> wheels) {
+        this.wheels.addAll(wheels);
     }
 
     public String toString() {
@@ -93,5 +70,11 @@ public class Car {
                 " fuelConsumption = " + getFuelConsumption() + "\n" +
                 '}';
     }
+
+    @Override
+    public int compareTo(Car car) {
+        return Integer.compare(this.getFuelConsumption(), car.getFuelConsumption());
+    }
+
 
 }

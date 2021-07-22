@@ -1,6 +1,6 @@
 package com.epam.task1.cabCompany.exception;
 
-public class NegativeNumbers extends Exception {
+public class NegativeValueException extends Exception {
 
 
     public String toString() {

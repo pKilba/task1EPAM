@@ -1,21 +1,22 @@
 package com.epam.task1.cabCompany.view;
 
-import com.epam.task1.cabCompany.calculation.TransportList;
-import com.epam.task1.cabCompany.entity.transport.PassengerCar;
+import com.epam.task1.cabCompany.data.TransportList;
+import com.epam.task1.cabCompany.entity.transport.Car;
 
-public class MessageOutput {
+public class MessagePrinter {
+
 
     public void printTotalPrice(long price) {
         System.out.println("Общая цена " + price);
     }
 
-    public void printFindSpeed(int index) {
-        System.out.println("Автомобиль/Автомобили с заданой скоростью : " + TransportList.transportArray.get(index));
+    public void printFindSpeed(Car car) {
+        System.out.println("Автомобиль/Автомобили с заданой скоростью : " + car);
     }
 
-    public void printArray() {
+    public void printArray(TransportList transportList) {
         System.out.println("Список автомобилей: ");
-        for (PassengerCar o : TransportList.transportArray) {
+        for (Car o : transportList.getTransportArray()) {
             System.out.println(o);
         }
     }
@@ -28,9 +29,9 @@ public class MessageOutput {
         System.out.println("---------------------------------------------------------");
     }
 
-    public void printSortArray() {
+    public void printSortArray(TransportList transportList) {
         System.out.println("Отсортированый список автомобилей по расходу топлива: ");
-        for (PassengerCar o : TransportList.transportArray) {
+        for (Car o : transportList.getTransportArray()) {
             System.out.println(o);
         }
     }
