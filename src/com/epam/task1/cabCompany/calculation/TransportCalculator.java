@@ -25,6 +25,7 @@ public class TransportCalculator {
         messagePrinter.printLine();
     }
 
+
     //сортируем по возрастанию
     private void sorting() {
         messagePrinter.printArray(transportList);
