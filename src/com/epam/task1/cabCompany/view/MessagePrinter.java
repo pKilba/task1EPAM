@@ -1,6 +1,6 @@
 package com.epam.task1.cabCompany.view;
 
-import com.epam.task1.cabCompany.data.TransportList;
+import com.epam.task1.cabCompany.entity.model.TransportList;
 import com.epam.task1.cabCompany.entity.transport.Car;
 
 public class MessagePrinter {

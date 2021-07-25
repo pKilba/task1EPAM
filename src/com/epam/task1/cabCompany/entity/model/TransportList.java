@@ -1,9 +1,8 @@
-package com.epam.task1.cabCompany.data;
+package com.epam.task1.cabCompany.entity.model;
 
 import com.epam.task1.cabCompany.entity.transport.Car;
 
-import java.util.*;
-
+;import java.util.*;
 
 public class TransportList {
 
@@ -62,6 +61,13 @@ public class TransportList {
         if (o == null || getClass() != o.getClass()) return false;
         TransportList that = (TransportList) o;
         return Objects.equals(transportArray, that.transportArray);
+    }
+
+    @Override
+    public String toString() {
+        return "TransportList{" +
+                "transportArray=" + transportArray +
+                '}';
     }
 
     @Override

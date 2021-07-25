@@ -1,6 +1,6 @@
-package com.epam.task1.cabCompany.calculation;
+package com.epam.task1.cabCompany.calculator;
 
-import com.epam.task1.cabCompany.data.TransportList;
+import com.epam.task1.cabCompany.entity.model.TransportList;
 import com.epam.task1.cabCompany.view.MessagePrinter;
 
 public class TransportCalculator {
@@ -15,19 +15,19 @@ public class TransportCalculator {
     }
 
 
-    public void calculate(int minSpeed, int maxSpeed) {
+    public void calculateAndPrintLine(int minSpeed, int maxSpeed) {
         messagePrinter.printLine();
-        sorting();
+        sortAndPrintResult();
         messagePrinter.printLine();
-        calculateCost();
+        calculateCostAndPrintResult();
         messagePrinter.printLine();
-        findSpeed(minSpeed, maxSpeed);
+        findBySpeedAndPrintResult(minSpeed, maxSpeed);
         messagePrinter.printLine();
     }
 
 
     //сортируем по возрастанию
-    private void sorting() {
+    private void sortAndPrintResult() {
         messagePrinter.printArray(transportList);
         messagePrinter.printLine();
         transportList.sort();
@@ -35,7 +35,7 @@ public class TransportCalculator {
     }
 
     //подсчитываем цену
-    private long calculateCost() {
+    private long calculateCostAndPrintResult() {
         long totalAmount = 0;
         for (int i = 0; i < transportList.size(); i++) {
             totalAmount += transportList.get(i).getPrice();
@@ -45,7 +45,7 @@ public class TransportCalculator {
     }
 
     //находим авто по скорости
-    private TransportList findSpeed(int minSpeed, int maxSpeed) {
+    private TransportList findBySpeedAndPrintResult(int minSpeed, int maxSpeed) {
         TransportList transportSetSpeed = new TransportList();
         messagePrinter.printSetSpeed(minSpeed, maxSpeed);
         for (int i = 0; i < transportList.size(); i++) {

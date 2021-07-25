@@ -6,6 +6,7 @@ import com.epam.task1.cabCompany.entity.component.Wheel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 //базовый класс
@@ -69,6 +70,19 @@ public abstract class Car implements Comparable<Car> {
         return "{" + "\n" + " price = " + getPrice() + "\n" + " speed = " + getSpeed() + "\n" +
                 " fuelConsumption = " + getFuelConsumption() + "\n" +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Car)) return false;
+        Car car = (Car) o;
+        return getPrice() == car.getPrice() && getFuelConsumption() == car.getFuelConsumption() && getSpeed() == car.getSpeed() && Objects.equals(getEngine(), car.getEngine()) && Objects.equals(getWheels(), car.getWheels());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPrice(), getFuelConsumption(), getSpeed(), getEngine(), getWheels());
     }
 
     @Override
