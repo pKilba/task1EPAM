@@ -2,7 +2,7 @@ package com.epam.task1.cabCompany.entity.model;
 
 import com.epam.task1.cabCompany.entity.transport.Car;
 
-;import java.util.*;
+import java.util.*;
 
 public class TransportList {
 
