@@ -13,16 +13,16 @@ import java.io.InputStreamReader;
 public class ConsoleDataAcquirer {
 
     private final String INPUT_PRICE_MESSAGE = "Введите цену автомобиля";
-    private final BufferedReader BF = new BufferedReader(new InputStreamReader(System.in));
-    private final MessagePrinter MESSAGE_PRINTER = new MessagePrinter();
+    private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    private MessagePrinter messagePrinter = new MessagePrinter();
 
 
     public int getIntegerNumber(String message) throws NegativeValueException, InputStreamConsoleException, InputDataTypeException {
         DataValidator dataValidator = new DataValidator();
-        MESSAGE_PRINTER.printInputAnIntegerNumber(message);
-        int number = 0;
+        messagePrinter.printInputAnIntegerNumber(message);
+        int number;
         try {
-            number = Integer.parseInt(BF.readLine());
+            number = Integer.parseInt(bufferedReader.readLine());
         } catch (NumberFormatException e) {
             throw new InputDataTypeException();
         } catch (IOException e) {
@@ -43,10 +43,10 @@ public class ConsoleDataAcquirer {
 
     public void ensureClosingResources() {
         try {
-            BF.close();
-            MESSAGE_PRINTER.printInfoAboutClose(true);
+            bufferedReader.close();
+            messagePrinter.printInfoAboutClose(true);
         } catch (IOException e) {
-            MESSAGE_PRINTER.printInfoAboutClose(false);
+            messagePrinter.printInfoAboutClose(false);
             e.printStackTrace();
         }
     }

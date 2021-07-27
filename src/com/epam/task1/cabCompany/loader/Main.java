@@ -19,15 +19,14 @@ import java.util.Arrays;
 
 public class Main {
 
-
     public static void main(String[] args) throws NegativeValueException, InputStreamConsoleException, InputDataTypeException {
         ConsoleDataAcquirer consoleDataAcquirer = new ConsoleDataAcquirer();
         PassengerCar passengerCar = new PassengerCar(consoleDataAcquirer.getPrice(), 12,
-                180, true, new PetrolEngine(), Arrays.asList(new Wheel()));
+                180, true, new PetrolEngine(), Arrays.asList(new Wheel()),"Coupe");
         RallyCar rallyCar = new RallyCar(consoleDataAcquirer.getPrice(), 6,
-                120, false, new ElectricMotor(), Arrays.asList(new Wheel()), true);
+                120, false, new ElectricMotor(), Arrays.asList(new Wheel()), "Hardtop",true);
         SportsСar sportСar = new SportsСar(consoleDataAcquirer.getPrice(), 11,
-                280, false, new DieselEngine(), Arrays.asList(new Wheel()), true, false);
+                280, false, new DieselEngine(), Arrays.asList(new Wheel()),"Universal", true, false);
         TransportList transportList = new TransportList(passengerCar, rallyCar, sportСar);
         MessagePrinter messagePrinter = new MessagePrinter();
         TransportCalculator calculator = new TransportCalculator(transportList, messagePrinter);

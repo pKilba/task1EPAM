@@ -13,8 +13,8 @@ public class RallyCar extends PassengerCar {
     public RallyCar() {
     }
 
-    public RallyCar(int price, int fuelConsumption, int speed, boolean sunroof, Engine engine, List <Wheel> wheel, boolean isRigidSuspensionOn) {
-        super(price, fuelConsumption, speed, sunroof, engine, wheel);
+    public RallyCar(int price, int fuelConsumption, int speed, boolean sunroof, Engine engine, List <Wheel> wheel, String bodyType, boolean isRigidSuspensionOn) {
+        super(price, fuelConsumption, speed, sunroof, engine, wheel,bodyType);
         this.isRigidSuspensionOn = isRigidSuspensionOn;
     }
 

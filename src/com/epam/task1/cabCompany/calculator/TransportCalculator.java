@@ -5,7 +5,6 @@ import com.epam.task1.cabCompany.view.MessagePrinter;
 
 public class TransportCalculator {
 
-
     private final MessagePrinter messagePrinter;
     private final TransportList transportList;
 
@@ -25,8 +24,7 @@ public class TransportCalculator {
         messagePrinter.printLine();
     }
 
-
-    //сортируем по возрастанию
+    //sort in ascending order
     private void sortAndPrintResult() {
         messagePrinter.printArray(transportList);
         messagePrinter.printLine();
@@ -34,7 +32,7 @@ public class TransportCalculator {
         messagePrinter.printSortArray(transportList);
     }
 
-    //подсчитываем цену
+    //calculate the price
     private long calculateCostAndPrintResult() {
         long totalAmount = 0;
         for (int i = 0; i < transportList.size(); i++) {
@@ -44,7 +42,7 @@ public class TransportCalculator {
         return totalAmount;
     }
 
-    //находим авто по скорости
+    //find a car by speed
     private TransportList findBySpeedAndPrintResult(int minSpeed, int maxSpeed) {
         TransportList transportSetSpeed = new TransportList();
         messagePrinter.printSetSpeed(minSpeed, maxSpeed);

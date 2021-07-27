@@ -3,6 +3,7 @@ package com.epam.task1.cabCompany.entity.component.engine;
 import java.util.Objects;
 
 public abstract class Engine {
+
     private final float engineVolume;
 
     public Engine(float engineVolume) {

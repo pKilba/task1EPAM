@@ -3,10 +3,8 @@ package com.epam.task1.cabCompany.view;
 import com.epam.task1.cabCompany.entity.model.TransportList;
 import com.epam.task1.cabCompany.entity.transport.Car;
 
-import java.io.IOException;
 
 public class MessagePrinter {
-
 
     public void printTotalPrice(long price) {
         System.out.println("Общая цена " + price);

@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class SportsСar extends PassengerCar {
+
     private boolean isAccelerationOn;
     private boolean isSponsorsExists;
 
@@ -14,8 +15,8 @@ public class SportsСar extends PassengerCar {
     }
 
     public SportsСar(int price, int fuelConsumption, int speed, boolean sunroof, Engine engine,
-                     List<Wheel> wheel, boolean isAccelerationOn, boolean sponsors) {
-        super(price, fuelConsumption, speed, sunroof, engine, wheel);
+                     List<Wheel> wheel,String bodyType,boolean isAccelerationOn, boolean sponsors) {
+        super(price, fuelConsumption, speed, sunroof, engine, wheel,bodyType);
         this.isAccelerationOn = isAccelerationOn;
         this.isSponsorsExists = sponsors;
     }

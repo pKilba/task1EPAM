@@ -8,18 +8,21 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-//легковой автомобиль
+//passenger car
 public class PassengerCar extends Car {
+
     private boolean sunroof;
+    private String bodyType;
 
     public PassengerCar() {
         super(123, 44, 55, new DieselEngine(), Arrays.asList(new Wheel()));
     }
 
     public PassengerCar(int price, int fuelConsumption, int speed, boolean sunroof,
-                        Engine engine, List<Wheel> wheel) {
+                        Engine engine, List<Wheel> wheel, String bodyType) {
         super(price, fuelConsumption, speed, engine, wheel);
         this.sunroof = sunroof;
+        this.bodyType = bodyType;
     }
 
     @Override

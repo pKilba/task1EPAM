@@ -9,8 +9,9 @@ import java.util.List;
 import java.util.Objects;
 
 
-//базовый класс
+//base class
 public abstract class Car implements Comparable<Car> {
+
     private int price;
     private int fuelConsumption;
     private int speed;
@@ -19,6 +20,7 @@ public abstract class Car implements Comparable<Car> {
 
 
     public Car(int price, int fuelConsumption, int speed, Engine engine, List<Wheel> wheels) {
+
         this.price = price;
         this.fuelConsumption = fuelConsumption;
         this.speed = speed;
