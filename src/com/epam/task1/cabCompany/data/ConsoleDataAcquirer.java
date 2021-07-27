@@ -12,9 +12,8 @@ import java.io.InputStreamReader;
 
 public class ConsoleDataAcquirer {
 
-    private final String INPUT_PRICE_MESSAGE = "Введите цену автомобиля";
-    private BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    private MessagePrinter messagePrinter = new MessagePrinter();
+    private final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    private final MessagePrinter messagePrinter = new MessagePrinter();
 
 
     public int getIntegerNumber(String message) throws NegativeValueException, InputStreamConsoleException, InputDataTypeException {
@@ -36,8 +35,8 @@ public class ConsoleDataAcquirer {
     }
 
     public int getPrice() throws NegativeValueException, InputStreamConsoleException, InputDataTypeException {
-
-        return getIntegerNumber(INPUT_PRICE_MESSAGE);
+        String priceMessage = "Введите цену автомобиля";
+        return getIntegerNumber(priceMessage);
     }
 
 

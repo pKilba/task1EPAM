@@ -16,8 +16,8 @@ public class MessagePrinter {
 
     public void printArray(TransportList transportList) {
         System.out.println("Список автомобилей: ");
-        for (Car o : transportList.getTransportArray()) {
-            System.out.println(o);
+        for (Car car : transportList.getTransportArray()) {
+            System.out.println(car);
         }
     }
 
@@ -31,13 +31,15 @@ public class MessagePrinter {
 
     public void printSortArray(TransportList transportList) {
         System.out.println("Отсортированый список автомобилей по расходу топлива: ");
-        for (Car o : transportList.getTransportArray()) {
-            System.out.println(o);
+        for (Car car : transportList.getTransportArray()) {
+            System.out.println(car);
         }
     }
 
     public void printInfoAboutClose(boolean isCorrect) {
-        String info = isCorrect ? "Поток закрыт " : "Поток не удалось закрыть ";
+        String info = isCorrect ?
+                "Поток закрыт " :
+                "Поток не удалось закрыть ";
         System.out.println(info);
     }
 
