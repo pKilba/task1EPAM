@@ -79,7 +79,8 @@ public abstract class Car implements Comparable<Car> {
         if (this == o) return true;
         if (!(o instanceof Car)) return false;
         Car car = (Car) o;
-        return getPrice() == car.getPrice() && getFuelConsumption() == car.getFuelConsumption() && getSpeed() == car.getSpeed() && Objects.equals(getEngine(), car.getEngine()) && Objects.equals(getWheels(), car.getWheels());
+        return getPrice() == car.getPrice() && getFuelConsumption() == car.getFuelConsumption() && getSpeed() == car.getSpeed() &&
+                Objects.equals(getEngine(), car.getEngine()) && Objects.equals(getWheels(), car.getWheels());
     }
 
     @Override

@@ -1,35 +1,35 @@
 package com.epam.task1.cabCompany.calculator;
 
 import com.epam.task1.cabCompany.entity.model.TransportList;
-import com.epam.task1.cabCompany.view.MessagePrinter;
+import com.epam.task1.cabCompany.view.impl.ConsoleMessagePrinter;
 
 public class TransportCalculator {
 
-    private final MessagePrinter messagePrinter;
+    private final ConsoleMessagePrinter consoleMessagePrinter;
     private final TransportList transportList;
 
-    public TransportCalculator(TransportList transportList, MessagePrinter messagePrinter) {
+    public TransportCalculator(TransportList transportList, ConsoleMessagePrinter consoleMessagePrinter) {
         this.transportList = transportList;
-        this.messagePrinter = messagePrinter;
+        this.consoleMessagePrinter = consoleMessagePrinter;
     }
 
 
     public void calculateAndPrintLine(int minSpeed, int maxSpeed) {
-        messagePrinter.printLine();
+        consoleMessagePrinter.printLine();
         sortAndPrintResult();
-        messagePrinter.printLine();
+        consoleMessagePrinter.printLine();
         calculateCostAndPrintResult();
-        messagePrinter.printLine();
+        consoleMessagePrinter.printLine();
         findBySpeedAndPrintResult(minSpeed, maxSpeed);
-        messagePrinter.printLine();
+        consoleMessagePrinter.printLine();
     }
 
     //sort in ascending order
     private void sortAndPrintResult() {
-        messagePrinter.printArray(transportList);
-        messagePrinter.printLine();
+        consoleMessagePrinter.printArray(transportList);
+        consoleMessagePrinter.printLine();
         transportList.sort();
-        messagePrinter.printSortArray(transportList);
+        consoleMessagePrinter.printSortArray(transportList);
     }
 
     //calculate the price
@@ -38,24 +38,24 @@ public class TransportCalculator {
         for (int i = 0; i < transportList.size(); i++) {
             totalAmount += transportList.get(i).getPrice();
         }
-        messagePrinter.printTotalPrice(totalAmount);
+        consoleMessagePrinter.printTotalPrice(totalAmount);
         return totalAmount;
     }
 
     //find a car by speed
     private TransportList findBySpeedAndPrintResult(int minSpeed, int maxSpeed) {
         TransportList transportSetSpeed = new TransportList();
-        messagePrinter.printSetSpeed(minSpeed, maxSpeed);
+        consoleMessagePrinter.printSetSpeed(minSpeed, maxSpeed);
         for (int i = 0; i < transportList.size(); i++) {
             if (minSpeed < transportList.get(i).getSpeed()
                     && transportList.get(i).getSpeed() < maxSpeed) {
-                messagePrinter.printFindSpeed(transportList.get(i));
+                consoleMessagePrinter.printFindSpeed(transportList.get(i));
                 transportSetSpeed.add(transportList.get(i));
             }
         }
 
         if (transportSetSpeed.isEmpty()) {
-            messagePrinter.printNoFind();
+            consoleMessagePrinter.printNoFind();
         }
         return transportSetSpeed;
     }

@@ -1,6 +1,6 @@
 package com.epam.task1.cabCompany.loader;
 
-import com.epam.task1.cabCompany.data.ConsoleDataAcquirer;
+import com.epam.task1.cabCompany.data.impl.ConsoleDataAcquirer;
 import com.epam.task1.cabCompany.entity.model.TransportList;
 import com.epam.task1.cabCompany.calculator.TransportCalculator;
 import com.epam.task1.cabCompany.entity.component.engine.DieselEngine;
@@ -13,7 +13,7 @@ import com.epam.task1.cabCompany.entity.transport.SportsСar;
 import com.epam.task1.cabCompany.exception.InputStreamConsoleException;
 import com.epam.task1.cabCompany.exception.NegativeValueException;
 import com.epam.task1.cabCompany.exception.InputDataTypeException;
-import com.epam.task1.cabCompany.view.MessagePrinter;
+import com.epam.task1.cabCompany.view.impl.ConsoleMessagePrinter;
 
 import java.util.Arrays;
 
@@ -28,8 +28,8 @@ public class Main {
         SportsСar sportСar = new SportsСar(consoleDataAcquirer.getPrice(), 11,
                 280, false, new DieselEngine(), Arrays.asList(new Wheel()),"Universal", true, false);
         TransportList transportList = new TransportList(passengerCar, rallyCar, sportСar);
-        MessagePrinter messagePrinter = new MessagePrinter();
-        TransportCalculator calculator = new TransportCalculator(transportList, messagePrinter);
+        ConsoleMessagePrinter consoleMessagePrinter = new ConsoleMessagePrinter();
+        TransportCalculator calculator = new TransportCalculator(transportList, consoleMessagePrinter);
         calculator.calculateAndPrintLine(100, 200);
         consoleDataAcquirer.ensureClosingResources();
 
