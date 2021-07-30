@@ -1,6 +1,6 @@
 package com.epam.task1.cabCompany.entity.transport;
 
-import com.epam.task1.cabCompany.entity.component.engine.Engine;
+import com.epam.task1.cabCompany.entity.component.Engine;
 import com.epam.task1.cabCompany.entity.component.Wheel;
 
 import java.util.List;

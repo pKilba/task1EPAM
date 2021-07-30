@@ -1,10 +1,14 @@
-package com.epam.task1.cabCompany.entity.component.engine;
+package com.epam.task1.cabCompany.entity.component;
 
 import java.util.Objects;
 
-public abstract class Engine {
+public class Engine {
 
     private final float engineVolume;
+
+    public Engine() {
+        engineVolume = 3.5F;
+    }
 
     public Engine(float engineVolume) {
         this.engineVolume = engineVolume;
@@ -25,5 +29,12 @@ public abstract class Engine {
     @Override
     public int hashCode() {
         return Objects.hash(getEngineVolume());
+    }
+
+    @Override
+    public String toString() {
+        return "Engine{" +
+                "engineVolume=" + engineVolume +
+                '}';
     }
 }

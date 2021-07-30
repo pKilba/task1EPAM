@@ -13,53 +13,53 @@ import java.util.Objects;
 
 public class TransportList {
 
-    private List<Car> transportArray = new ArrayList<>();
+    private List<Car> transportList = new ArrayList<>();
 
     public TransportList() {
     }
 
     public TransportList(Car... cars) {
-        transportArray.addAll(Arrays.asList(cars));
+        transportList.addAll(Arrays.asList(cars));
     }
 
-    public List<Car> getTransportArray() {
-        return transportArray;
+    public List<Car> getTransportList() {
+        return transportList;
     }
 
     public void sort() {
-        Collections.sort(transportArray);
+        Collections.sort(transportList);
     }
 
     public int size() {
-        return transportArray.size();
+        return transportList.size();
     }
 
     public boolean isEmpty() {
-        return transportArray.isEmpty();
+        return transportList.isEmpty();
     }
 
     public boolean contains(Object o) {
-        return transportArray.contains(o);
+        return transportList.contains(o);
     }
 
     public int indexOf(Object o) {
-        return transportArray.indexOf(o);
+        return transportList.indexOf(o);
     }
 
     public Car get(int index) {
-        return transportArray.get(index);
+        return transportList.get(index);
     }
 
     public Car set(int index, Car element) {
-        return transportArray.set(index, element);
+        return transportList.set(index, element);
     }
 
     public boolean add(Car Car) {
-        return transportArray.add(Car);
+        return transportList.add(Car);
     }
 
     public Car remove(int index) {
-        return transportArray.remove(index);
+        return transportList.remove(index);
     }
 
     @Override
@@ -67,34 +67,34 @@ public class TransportList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TransportList that = (TransportList) o;
-        return Objects.equals(transportArray, that.transportArray);
+        return Objects.equals(transportList, that.transportList);
     }
 
     @Override
     public String toString() {
         return "TransportList{" +
-                "transportArray=" + transportArray +
+                "transportArray=" + transportList +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(transportArray);
+        return Objects.hash(transportList);
     }
 
     public boolean remove(Object o) {
-        return transportArray.remove(o);
+        return transportList.remove(o);
     }
 
     public boolean addAll(Collection<? extends Car> c) {
-        return transportArray.addAll(c);
+        return transportList.addAll(c);
     }
 
     public void sort(Comparator<? super Car> c) {
-        transportArray.sort(c);
+        transportList.sort(c);
     }
 
-    public void setTransportArray(ArrayList<Car> transportArray) {
-        this.transportArray = transportArray;
+    public void setTransportList(ArrayList<Car> transportList) {
+        this.transportList = transportList;
     }
 }

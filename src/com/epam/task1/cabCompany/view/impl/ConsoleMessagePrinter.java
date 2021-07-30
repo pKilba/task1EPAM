@@ -17,7 +17,7 @@ public class ConsoleMessagePrinter implements MessagePrinter {
 
     public void printArray(TransportList transportList) {
         System.out.println("Список автомобилей: ");
-        for (Car car : transportList.getTransportArray()) {
+        for (Car car : transportList.getTransportList()) {
             System.out.println(car);
         }
     }
@@ -32,7 +32,7 @@ public class ConsoleMessagePrinter implements MessagePrinter {
 
     public void printSortArray(TransportList transportList) {
         System.out.println("Отсортированый список автомобилей по расходу топлива: ");
-        for (Car car : transportList.getTransportArray()) {
+        for (Car car : transportList.getTransportList()) {
             System.out.println(car);
         }
     }
